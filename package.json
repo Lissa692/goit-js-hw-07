@@ -1,0 +1,17 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm init -y"
+  },
+  "author": "Lesya Finikovska",
+  "license": "ISC",
+  "keywords": [
+    "LISSA"
+  ],
+  "dependencies": {
+    "validator": "^13.9.0"
+  }
+}

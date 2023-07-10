@@ -28,11 +28,11 @@ function clickOnGallery(event) {
   }
   console.log("click");
 
-  let lightbox = $("event.target").simpleLightbox();
-  lightbox.on("show.simplelightbox", function () {});
-
-  lightbox.open();
-
+  var lightbox = new SimpleLightbox(".gallery__item a", {
+    captionsData: "alt",
+    captionPosition: "bottom",
+    captionDelay: 250,
+  });
   document.addEventListener("keydown", (event) => {
     if (event.code === "Escape") {
       lightbox.close();

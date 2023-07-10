@@ -23,22 +23,34 @@ const elemAdd = createItemForGallary(galleryItems);
 galleryEl.insertAdjacentHTML("beforeend", elemAdd);
 
 galleryEl.addEventListener("click", clickOnGallery);
+let instance = null;
 function clickOnGallery(event) {
   event.preventDefault();
-  const target = event.target;
 
-  if (target.dataset.source) {
+  // const target = event.target;
+
+  if (event.target.dataset.source) {
     console.log("click");
   }
 
-  const instance = basicLightbox.create(
-    `<img src="${event.target.dataset.source}"  width="800" height="600">`
-  );
-  instance.show();
-
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      instance.close();
+  instance = basicLightbox.create(
+    `<img src="${event.target.dataset.source}"  width="800" height="600">`,
+    {
+      onShow: () => {
+        document.addEventListener("keydown", KeyboardEsc);
+      },
+      onClose: () => {
+        document.removeEventListener("keydown", KeyboardEsc);
+      },
     }
-  });
+  );
+
+  instance.show();
+}
+
+function KeyboardEsc(event) {
+  if (event.code !== "Escape") {
+    return;
+  }
+  instance.close();
 }
