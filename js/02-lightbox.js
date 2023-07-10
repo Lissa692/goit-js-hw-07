@@ -27,16 +27,16 @@ function clickOnGallery(event) {
     return;
   }
   console.log("click");
-
-  var lightbox = new SimpleLightbox(".gallery__item a", {
-    captionsData: "alt",
-    captionPosition: "bottom",
-    captionDelay: 250,
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.code === "Escape") {
-      lightbox.close();
-    }
-  });
 }
+const lightbox = new SimpleLightbox(".gallery__item a", {
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
+});
+// document.addEventListener("keydown", (event) => {
+//   if (event.code === "Escape") {
+//     lightbox.close();
+//   }
+// });
+
 console.log(galleryEl);

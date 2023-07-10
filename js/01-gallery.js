@@ -37,10 +37,10 @@ function clickOnGallery(event) {
     `<img src="${event.target.dataset.source}"  width="800" height="600">`,
     {
       onShow: () => {
-        document.addEventListener("keydown", KeyboardEsc);
+        document.addEventListener("keydown", keyboardEsc);
       },
       onClose: () => {
-        document.removeEventListener("keydown", KeyboardEsc);
+        document.removeEventListener("keydown", keyboardEsc);
       },
     }
   );
@@ -48,7 +48,7 @@ function clickOnGallery(event) {
   instance.show();
 }
 
-function KeyboardEsc(event) {
+function keyboardEsc(event) {
   if (event.code !== "Escape") {
     return;
   }
