@@ -33,10 +33,5 @@ const lightbox = new SimpleLightbox(".gallery__item a", {
   captionPosition: "bottom",
   captionDelay: 250,
 });
-// document.addEventListener("keydown", (event) => {
-//   if (event.code === "Escape") {
-//     lightbox.close();
-//   }
-// });
 
 console.log(galleryEl);
