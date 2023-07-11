@@ -19,15 +19,6 @@ function createItemForGallary(galleryItems) {
 const elemAdd = createItemForGallary(galleryItems);
 galleryEl.insertAdjacentHTML("beforeend", elemAdd);
 
-galleryEl.addEventListener("click", clickOnGallery);
-function clickOnGallery(event) {
-  event.preventDefault();
-
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  console.log("click");
-}
 const lightbox = new SimpleLightbox(".gallery__item a", {
   captionsData: "alt",
   captionPosition: "bottom",
